@@ -6,13 +6,27 @@
     {
       "label": "Run App",
       "command": "python",
-      "args": ["app.py"]
+      "args": [
+        "app.py"
+      ],
+      "options": {
+        "env": {
+          "FLASK_ENV": "development"
+        }
+      }
     },
-    
     {
       "label": "Run Tests",
       "command": "python",
-      "args": ["-m", "unittest", "discover", "-s", ".\\lib\\Equation", "-t", "..\\.."]
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        ".\\lib\\Equation",
+        "-t",
+        "..\\.."
+      ]
     }
   ]
 }
