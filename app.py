@@ -1,35 +1,48 @@
+import sys  # noqa # isort:skip
+sys.path.append('lib')  # noqa # isort:skip
+
 import json
-import sys  # noqa
-from argparse import ArgumentParser
 
 from flask import Flask, jsonify
+from flask.globals import request
 
 from Equation import Generator
-
-sys.path.append('lib')  # noqa
-
-
-parser = ArgumentParser()
-
-parser.add_argument("-e", "--equation", help="Equation to be parsed")
-
-args = parser.parse_args()
+from Response import Response
 
 app = Flask(__name__)
 
 
-@app.route("/equation/<int:number_terms>/<string:signs>")
-def calcul(number_terms, signs):
-    signs = signs.split(",")
+@app.route("/batch/<int:count>/equation/<int:number_terms>")
+def get_multiple_equation(count, number_terms):
+    i = 0
+    error: str = None
+    data: [str] = []
+    while i < count:
+        equation_response = get_equation(number_terms)
+        response_object = json.loads(equation_response)
+        if error in response_object:
+            error = response_object["error"]
+            break
+        data.append(response_object["data"])
+        i += 1
+
+    if error is not None:
+        return Response.failure(error)
+
+    return Response.success(data)
+
+
+@app.route("/equation/<int:number_terms>")
+def get_equation(number_terms):
+    if request.args.get('signs') is None:
+        return Response.failure("Parameter `signs` is not provided.")
+
+    signs = request.args.get('signs').split(",")
     try:
         equation = Generator().generate(number_terms, signs)
-        return json.dumps({
-            "data": str(equation)
-        })
+        return Response.success(equation)
     except Exception:
-        return json.dumps({
-            "error": "Invalid arguments provided to generate equation."
-        })
+        return Response.failure("Invalid arguments provided to generate equation.")
 
 
 if __name__ == '__main__':
