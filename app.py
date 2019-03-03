@@ -20,7 +20,7 @@ def get_multiple_equation(count, number_terms):
     while i < count:
         equation_response = get_equation(number_terms)
         response_object = json.loads(equation_response)
-        if error in response_object:
+        if "error" in response_object:
             error = response_object["error"]
             break
         data.append(response_object["data"])
@@ -40,9 +40,9 @@ def get_equation(number_terms):
     signs = request.args.get('signs').split(",")
     try:
         equation = Generator().generate(number_terms, signs)
-        return Response.success(equation)
-    except Exception:
-        return Response.failure("Invalid arguments provided to generate equation.")
+        return Response.success(str(equation))
+    except Exception as error:
+        return Response.failure(format(error))
 
 
 if __name__ == '__main__':

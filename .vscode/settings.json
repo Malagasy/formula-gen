@@ -1,3 +1,6 @@
 {
-  "python.linting.enabled": true
+  "python.linting.enabled": true,
+  "python.unitTest.unittestEnabled": true,
+  "python.unitTest.pyTestEnabled": false,
+  "python.unitTest.nosetestsEnabled": false,
 }

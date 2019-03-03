@@ -18,14 +18,17 @@
     {
       "label": "Run Tests",
       "command": "python",
+      "group": "test",
       "args": [
         "-m",
         "unittest",
         "discover",
         "-s",
-        ".\\lib\\Equation",
+        "${workspaceFolder}",
         "-t",
-        "..\\.."
+        "${workspaceFolder}",
+        "-p",
+        "*\\test*.py"
       ]
     }
   ]

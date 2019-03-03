@@ -13,5 +13,5 @@ class Response:
     def success(data: any, status: int = 200):
         return json.dumps({
             "status": status,
-            "data": str(data)
+            "data": data
         })

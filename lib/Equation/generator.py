@@ -17,8 +17,8 @@ class Generator:
         for sign in signs:
             if sign not in Sign.list():
                 raise Exception(f"Unknown sign : ${sign}")
-        if number_of_terms == 0:
-            raise Exception("Number of terms can not be zero")
+        if number_of_terms <= 1:
+            raise Exception("Number of terms can not be zero or one.")
 
         self.signs = signs
         self._number_of_signs = number_of_terms-2
