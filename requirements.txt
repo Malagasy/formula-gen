@@ -1,0 +1,11 @@
+autopep8==1.4.3
+binarytree==4.0.0
+Click==7.0
+Flask==1.0.2
+itsdangerous==1.1.0
+Jinja2==2.10
+MarkupSafe==1.1.1
+pycodestyle==2.5.0
+rope==0.12.0
+tinydb==3.12.2
+Werkzeug==0.14.1

@@ -23,12 +23,13 @@
         "-m",
         "unittest",
         "discover",
+        "-v",
         "-s",
         "${workspaceFolder}",
         "-t",
         "${workspaceFolder}",
         "-p",
-        "*\\test*.py"
+        "*test*.py"
       ]
     }
   ]
