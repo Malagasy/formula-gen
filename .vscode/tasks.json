@@ -31,6 +31,44 @@
         "-p",
         "*test*.py"
       ]
+    },
+    {
+      "label": "Run app (docker)",
+      "command": "docker",
+      "args": [
+        "run",
+        "-t",
+        "-i",
+        "-p",
+        "4000:5000",
+        "calgen"
+      ]
+    },
+    {
+      "label": "Build docker image",
+      "command": "docker",
+      "args": [
+        "--no-cache",
+        "-t",
+        "calgen",
+        "."
+      ]
+    },
+    {
+      "label": "Run jenkins",
+      "command": "docker",
+      "args": [
+        "run",
+        "-t",
+        "-i",
+        "-p",
+        "8080:8080",
+        "-p",
+        "50000:50000",
+        "-v",
+        "jenkins_home:/var/jenkins_home",
+        "jenkins/jenkins:lts"
+      ]
     }
   ]
 }
