@@ -9,7 +9,7 @@ pipeline {
                 
             }
             steps {
-                sh 'ls -l'
+                bat 'ls -l'
             }
         }
     }
