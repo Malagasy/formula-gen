@@ -1,7 +1,4 @@
 pipeline {
-    environment {
-        PATH = "C:\\Program Files\\Git\\usr\\bin;${env.PATH}"
-    }
     agent none
     stages {
         stage('build') {
