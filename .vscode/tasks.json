@@ -5,10 +5,8 @@
   "tasks": [
     {
       "label": "Run App",
-      "command": "python",
-      "args": [
-        "app.py"
-      ],
+      "command": "python3.7",
+      "args": ["app.py"],
       "options": {
         "env": {
           "FLASK_ENV": "development"
@@ -17,7 +15,7 @@
     },
     {
       "label": "Run Tests",
-      "command": "python",
+      "command": "python3.7",
       "group": "test",
       "args": [
         "-m",
@@ -35,33 +33,17 @@
     {
       "label": "Run app (docker)",
       "command": "docker",
-      "args": [
-        "run",
-        "-t",
-        "-i",
-        "-p",
-        "4000:5000",
-        "calgen"
-      ]
+      "args": ["run", "-t", "-i", "-p", "4000:5000", "calgen"]
     },
     {
       "label": "Build docker image",
       "command": "docker",
-      "args": [
-        "--no-cache",
-        "-t",
-        "calgen",
-        "."
-      ]
+      "args": ["--no-cache", "-t", "calgen", "."]
     },
     {
       "label": "Run jenkins",
       "command": "java",
-      "args": [
-        "-jar",
-        "D:\\Workspace\\jenkins.war",
-        "--httpPort=8080"
-      ]
+      "args": ["-jar", "D:\\Workspace\\jenkins.war", "--httpPort=8080"]
     }
   ]
 }
