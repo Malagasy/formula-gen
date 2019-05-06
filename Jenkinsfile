@@ -9,7 +9,7 @@ pipeline {
             }
             steps {
                 sh 'pip install -r requirements.txt'
-                sh 'python -m unittest discover -v -s . -t . -p *test*.py'
+                sh "python -m unittest discover -v -s ${WORKSPACE} -t ${WORKSPACE} -p '*test*.py'"
             }
         }
 
