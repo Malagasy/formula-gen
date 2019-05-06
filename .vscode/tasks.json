@@ -55,12 +55,28 @@
       ]
     },
     {
-      "label": "Run jenkins",
+      "label": "Run jenkins local",
       "command": "java",
       "args": [
         "-jar",
         "D:\\Workspace\\jenkins.war",
         "--httpPort=8080"
+      ]
+    },
+    {
+      "label": "Run jenkins (docker)",
+      "command": "docker",
+      "args": [
+        "container",
+        "run",
+        "-d",
+        "-p",
+        "8080:8080",
+        "-v",
+        "/var/run/docker.sock:/var/run/docker.sock",
+        "-v",
+        "D:\\Workspace:/workspace",
+        "jenkins-docker"
       ]
     }
   ]
