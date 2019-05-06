@@ -3,11 +3,14 @@ pipeline {
     stages {
         stage('build') {
             agent { 
-                dockerfile true
+                docker {
+                    image "python:3.7.2-alpine"
+                }
             }
             steps {
-                sh 'ls -l'
+                sh 'ls -la'
             }
         }
+
     }
 }
