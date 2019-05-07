@@ -30,8 +30,8 @@
         "${workspaceFolder}",
         "-p",
         "*test*.py",
-        "-o",
-        "${workspaceFolder}/reports"
+        "--output-file",
+        "${workspaceFolder}/reports/results.xml"
       ]
     },
     {
