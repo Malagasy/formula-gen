@@ -8,6 +8,11 @@ pipeline {
             steps {
                 sh "python -m xmlrunner discover -v -s ${WORKSPACE} -t ${WORKSPACE} -p *test*.py --output-file ${WORKSPACE}/reports/results.xml"
             }
+            post {
+                always {
+                    junit 'reports/results.xml'
+                }
+            }
         }
 
     }
