@@ -21,7 +21,7 @@
       "group": "test",
       "args": [
         "-m",
-        "unittest",
+        "xmlrunner",
         "discover",
         "-v",
         "-s",
@@ -29,7 +29,9 @@
         "-t",
         "${workspaceFolder}",
         "-p",
-        "*test*.py"
+        "*test*.py",
+        "-o",
+        "${workspaceFolder}/reports"
       ]
     },
     {

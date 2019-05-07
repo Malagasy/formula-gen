@@ -9,3 +9,4 @@ pycodestyle==2.5.0
 rope==0.12.0
 tinydb==3.12.2
 Werkzeug==0.14.1
+unittest-xml-reporting==2.5.1
