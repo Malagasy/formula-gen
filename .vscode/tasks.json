@@ -5,7 +5,7 @@
   "tasks": [
     {
       "label": "Run App",
-      "command": "python",
+      "command": "python3.7",
       "args": [
         "app.py"
       ],
@@ -17,7 +17,7 @@
     },
     {
       "label": "Run Tests",
-      "command": "python",
+      "command": "python3.7",
       "group": "test",
       "args": [
         "-m",

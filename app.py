@@ -6,8 +6,8 @@ import json
 from flask import Flask, jsonify
 from flask.globals import request
 
-from Equation import Generator
-from Response import Response
+from lib.Equation import Generator
+from lib.Response import Response
 
 app = Flask(__name__)
 

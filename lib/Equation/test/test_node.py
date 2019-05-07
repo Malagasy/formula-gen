@@ -21,7 +21,7 @@ class TestNode(unittest.TestCase):
         node = Node("+", 1, 23)
         self.assertEqual(node.calc(), 24)
         node = Node("+", 1, Node("-", 102, 193))
-        self.assertEqual(node.calc(), -91)
+        self.assertEqual(node.calc(), -90)
         node = Node("+", Node("+", 6, 9), 10)
         self.assertEqual(node.calc(), 25)
 
