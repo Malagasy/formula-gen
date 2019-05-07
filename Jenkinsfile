@@ -3,7 +3,9 @@ pipeline {
     stages {
         stage('build') {
             agent { 
-                dockerfile true
+                dockerfile { 
+                    customWorkspace '/www/app'
+                }
             }
             steps {
                 sh "pwd"
