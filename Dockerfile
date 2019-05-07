@@ -1,7 +1,5 @@
 FROM python:3.7.2-alpine
 
-WORKDIR /www/app
-
 COPY . .
 
 EXPOSE 5000
